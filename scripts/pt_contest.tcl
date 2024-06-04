@@ -82,8 +82,7 @@ foreach_in_collection cell [get_cells] {
 }
 
 # Run multiVth assignment
-# Please, replace N with the Group ID
-source ./scripts/multiVth_Group_N.tcl
+source ./scripts/multiVth_Group_4.tcl
 set start_time [clock milliseconds]
 multiVth
 set end_time [clock milliseconds]
