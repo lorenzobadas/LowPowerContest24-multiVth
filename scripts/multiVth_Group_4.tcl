@@ -73,40 +73,31 @@ proc binary_swap {...} {
 proc multiVth {} {
     set lvt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == LVT"]
     if {0} {
-    # stupid Valentino solution
-    set C 100
-    for {set i 0} {$i < $C} {incr i} {
-        set cell [index_collection $lvt_cells $i]
-        swap_vt $cell "H"
-    }
+        # stupid Valentino solution
+        set C 100
+        for {set i 0} {$i < $C} {incr i} {
+            set cell [index_collection $lvt_cells $i]
+            swap_vt $cell "H"
+        }
     }
     return 1
 }
 
-proc get_cells_in_path_test {} {
-    set path [get_timing_paths -nworst 1 -slack_greater_than 0.0]
-    set timing_points [get_attribute $path points]
-    foreach_in_collection timing_point $timing_points {
-        set timing_point_object [get_attribute $timing_point object]
-        set timing_point_object_class [get_attribute $timing_point_object object_class]
-        set port_pin [get_attribute $timing_point_object full_name]
-        set cells_name_list [get_cells -of_objects $port_pin]
-        puts "$timing_point_object_class $port_pin"
-        foreach_in_collection cell $cells_name_list {
-            set cell_ref_name [get_attribute $cell ref_name]
-            set cell_full_name [get_attribute $cell full_name]
-            puts "    FULL_NAME: $cell_full_name REF_NAME: $cell_ref_name"
-        }
-        puts "---------------"
-    }
-    return
-}
-
-
-set path [get_timing_paths -nworst 1 -slack_greater_than 0.0]
-set this_list [get_cells_in_path $path]
-foreach cell $this_list {
-    set cell_ref_name [get_attribute $cell ref_name]
-    set cell_full_name [get_attribute $cell full_name]
-    puts "FULL_NAME: $cell_full_name REF_NAME: $cell_ref_name"
-}
+# proc get_cells_in_path_test {} {
+#     set path [get_timing_paths -nworst 1 -slack_greater_than 0.0]
+#     set timing_points [get_attribute $path points]
+#     foreach_in_collection timing_point $timing_points {
+#         set timing_point_object [get_attribute $timing_point object]
+#         set timing_point_object_class [get_attribute $timing_point_object object_class]
+#         set port_pin [get_attribute $timing_point_object full_name]
+#         set cells_name_list [get_cells -of_objects $port_pin]
+#         puts "$timing_point_object_class $port_pin"
+#         foreach_in_collection cell $cells_name_list {
+#             set cell_ref_name [get_attribute $cell ref_name]
+#             set cell_full_name [get_attribute $cell full_name]
+#             puts "    FULL_NAME: $cell_full_name REF_NAME: $cell_ref_name"
+#         }
+#         puts "---------------"
+#     }
+#     return
+# }
