@@ -45,11 +45,14 @@ proc create_priority_list {} {
             }
         }
         # break if length of priority_list is equal to cell_count
-        if {[sizeof_collection $priority_list] == $cell_count} {
+        if {[llength $priority_list] == $cell_count} {
             break
         }
     }
-    return $priority_list
+
+    # the priority list is ordered from the worst to the best
+    # reversing it to have the best first (we are going to swap the best ones first)
+    return [lreverse $priority_list]
 }
 
 proc swap_vt {cell vt} {
@@ -61,12 +64,15 @@ proc swap_vt {cell vt} {
     return
 }
 
-proc binary_swap {...} {
+proc binary_swap {priority_list original_vt new_vt} {
     # case 1 swap L to H then L to S
     # case 2 swap L to S then S to H
 
+    
     # call this to update the timing of the combinational circuit (recalculate slack foreach cell)
     # update_timing -full
+
+    # revert operations if negative slack
 }
 
 
