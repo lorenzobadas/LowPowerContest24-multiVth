@@ -115,23 +115,247 @@ puts $original_cells
 # Run multiVth assignment
 source ./scripts/multiVth_Group_4.tcl
 set start_time [clock milliseconds]
-1718127067599
+1718228036167
 multiVth
+index: 23 skipped_cells: 23
+step: 23
+consecutive_fails: 1, max_fails: 15
+------------------------------------------------
+index: 46 skipped_cells: 46
+step: 23
+consecutive_fails: 2, max_fails: 15
+------------------------------------------------
+index: 23 skipped_cells: 0
+step: 23
+consecutive_fails: 0, max_fails: 15
+------------------------------------------------
+index: 46 skipped_cells: 23
+step: 23
+consecutive_fails: 1, max_fails: 15
+------------------------------------------------
+index: 69 skipped_cells: 46
+step: 23
+consecutive_fails: 2, max_fails: 15
+------------------------------------------------
+index: 92 skipped_cells: 69
+step: 23
+consecutive_fails: 3, max_fails: 15
+------------------------------------------------
+index: 115 skipped_cells: 92
+step: 23
+consecutive_fails: 4, max_fails: 15
+------------------------------------------------
+index: 138 skipped_cells: 115
+step: 23
+consecutive_fails: 5, max_fails: 15
+------------------------------------------------
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+index: 161 skipped_cells: 138
+step: 23
+consecutive_fails: 6, max_fails: 15
+------------------------------------------------
+index: 12 skipped_cells: 12
+step: 12
+consecutive_fails: 1, max_fails: 8
+------------------------------------------------
+index: 24 skipped_cells: 24
+step: 12
+consecutive_fails: 2, max_fails: 8
+------------------------------------------------
+index: 36 skipped_cells: 36
+step: 12
+consecutive_fails: 3, max_fails: 8
+------------------------------------------------
+index: 48 skipped_cells: 48
+step: 12
+consecutive_fails: 4, max_fails: 8
+------------------------------------------------
+index: 12 skipped_cells: 0
+step: 12
+consecutive_fails: 0, max_fails: 8
+------------------------------------------------
+index: 24 skipped_cells: 12
+step: 12
+consecutive_fails: 1, max_fails: 8
+------------------------------------------------
+index: 36 skipped_cells: 12
+step: 12
+consecutive_fails: 0, max_fails: 8
+------------------------------------------------
+index: 48 skipped_cells: 12
+step: 12
+consecutive_fails: 0, max_fails: 8
+------------------------------------------------
+index: 60 skipped_cells: 24
+step: 12
+consecutive_fails: 1, max_fails: 8
+------------------------------------------------
+index: 72 skipped_cells: 36
+step: 12
+consecutive_fails: 2, max_fails: 8
+------------------------------------------------
+index: 84 skipped_cells: 48
+step: 12
+consecutive_fails: 3, max_fails: 8
+------------------------------------------------
+index: 96 skipped_cells: 60
+step: 12
+consecutive_fails: 4, max_fails: 8
+------------------------------------------------
+index: 108 skipped_cells: 72
+step: 12
+consecutive_fails: 5, max_fails: 8
+------------------------------------------------
+index: 120 skipped_cells: 84
+step: 12
+consecutive_fails: 6, max_fails: 8
+------------------------------------------------
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+Error: No changes made. (NED-040)
+index: 132 skipped_cells: 96
+step: 12
+consecutive_fails: 7, max_fails: 8
+------------------------------------------------
+index: 6 skipped_cells: 0
+step: 6
+consecutive_fails: 0, max_fails: 4
+------------------------------------------------
+index: 12 skipped_cells: 6
+step: 6
+consecutive_fails: 1, max_fails: 4
+------------------------------------------------
+index: 18 skipped_cells: 12
+step: 6
+consecutive_fails: 2, max_fails: 4
+------------------------------------------------
+index: 24 skipped_cells: 18
+step: 6
+consecutive_fails: 3, max_fails: 4
+------------------------------------------------
+index: 6 skipped_cells: 0
+step: 6
+consecutive_fails: 0, max_fails: 4
+------------------------------------------------
+index: 12 skipped_cells: 6
+step: 6
+consecutive_fails: 1, max_fails: 4
+------------------------------------------------
+index: 18 skipped_cells: 12
+step: 6
+consecutive_fails: 2, max_fails: 4
+------------------------------------------------
+index: 24 skipped_cells: 18
+step: 6
+consecutive_fails: 3, max_fails: 4
+------------------------------------------------
+index: 30 skipped_cells: 18
+step: 6
+consecutive_fails: 0, max_fails: 4
+------------------------------------------------
+index: 36 skipped_cells: 24
+step: 6
+consecutive_fails: 1, max_fails: 4
+------------------------------------------------
+index: 42 skipped_cells: 30
+step: 6
+consecutive_fails: 2, max_fails: 4
+------------------------------------------------
+index: 48 skipped_cells: 36
+step: 6
+consecutive_fails: 3, max_fails: 4
+------------------------------------------------
+index: 3 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_fails: 2
+------------------------------------------------
+index: 6 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_fails: 2
+------------------------------------------------
+index: 9 skipped_cells: 3
+step: 3
+consecutive_fails: 1, max_fails: 2
+------------------------------------------------
+index: 3 skipped_cells: 3
+step: 3
+consecutive_fails: 1, max_fails: 2
+------------------------------------------------
+index: 6 skipped_cells: 3
+step: 3
+consecutive_fails: 0, max_fails: 2
+------------------------------------------------
+index: 9 skipped_cells: 6
+step: 3
+consecutive_fails: 1, max_fails: 2
+------------------------------------------------
+index: 12 skipped_cells: 6
+step: 3
+consecutive_fails: 0, max_fails: 2
+------------------------------------------------
+index: 15 skipped_cells: 9
+step: 3
+consecutive_fails: 1, max_fails: 2
+------------------------------------------------
 1
 set end_time [clock milliseconds]
-1718127098522
+1718228095958
 # Force full timing update
 update_timing -full
 1
 # Check: The slack of the most critical path of the circuit is positive (>= 0).
 set wrt_slack [get_attribute [get_timing_paths] slack]
-0.055611
+0.000031
 if {$wrt_slack < 0} {
     error "Slack is negative: $wrt_slack"
 } else {
     puts "(OK) Slack is positive: $wrt_slack"
 }
-(OK) Slack is positive: 0.055611
+(OK) Slack is positive: 0.000031
 # Check: Logic gates must mantain the same cell footprint, i.e., same size and area as before optimization.
 foreach cell_footprint $original_cells {
     set full_name [lindex $cell_footprint 0]
@@ -146,12 +370,12 @@ foreach cell_footprint $original_cells {
 puts "(OK) All the cells mantained the same footprint."
 (OK) All the cells mantained the same footprint.
 set run_time [expr ($end_time - $start_time) / 1000.0]
-30.923
+59.791
 if {$run_time > 180.0} {
     error "Maximum Optimization Run Time exceeded: ${run_time}s."
 } 
 puts "(OK) Optimization Run Time: ${run_time}s."
-(OK) Optimization Run Time: 30.923s.
+(OK) Optimization Run Time: 59.791s.
 # Reporting
 report_threshold_voltage_group
 ------------------------------------------------------------------------------------------------------------------------
@@ -173,11 +397,11 @@ memory                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)   
 black_box                 0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 io_pad                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 clock_network             0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
-combinational           454 ( 74.43%)        43 (  7.05%)       113 ( 18.52%)       610 (100.00%)       
+combinational           499 ( 81.80%)        30 (  4.92%)        81 ( 13.28%)       610 (100.00%)       
 register                  0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 sequential                0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 ------------------------------------------------------------------------------------------------------------------------
-Total                   454 ( 74.43%)        43 (  7.05%)       113 ( 18.52%)       610 (100.00%)
+Total                   499 ( 81.80%)        30 (  4.92%)        81 ( 13.28%)       610 (100.00%)
 ------------------------------------------------------------------------------------------------------------------------
 SUMMARY : 
 
@@ -191,11 +415,11 @@ SUMMARY :
 1
 set leakage_final [get_attribute [current_design] leakage_power]
 Information: Running switching activity propagation with 4 threads!
-1.412607972992811e-07
+1.035511688286719e-07
 set savings [expr {100 * ($leakage_initial - $leakage_final) / $leakage_initial}]
-93.7534683787
+95.4209825877
 puts "Leakage Power Savings=$savings %"
-Leakage Power Savings=93.7534683787 %
+Leakage Power Savings=95.4209825877 %
 ######################################################################
 ##
 ## EXIT
@@ -206,21 +430,21 @@ Suppressed Messages Summary:
 Id          Severity      Occurrences   Suppressed
 -------------------------------------------------------------------------------
 PWR-246     Warning                 2            2
-NED-045     Information           949          949
-LNK-041     Information           124          124
-ENV-003     Information            36           36
-PTE-139     Information            33           33
+NED-045     Information          2195         2195
+LNK-041     Information           181          181
+PTE-139     Information           141          141
+ENV-003     Information           136          136
+PTE-018     Information            67           67
 CMD-041     Information            18           18
-PTE-018     Information            17           17
 PWR-601     Information             2            2
 PWR-602     Information             2            2
 Total 9 types of messages are suppressed
 
-Timing updates: 18 (0 implicit, 18 explicit) (0 incremental, 18 full, 0 logical)
+Timing updates: 75 (7 implicit, 68 explicit) (7 incremental, 68 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 1156.56 MB
-CPU usage for this session: 70 seconds 
-Elapsed time for this session: 39 seconds
-Diagnostics summary: 2 warnings, 5 informationals
+Maximum memory usage for this session: 1166.72 MB
+CPU usage for this session: 132 seconds 
+Elapsed time for this session: 68 seconds
+Diagnostics summary: 48 errors, 2 warnings, 5 informationals
 
 Thank you for using pt_shell!
