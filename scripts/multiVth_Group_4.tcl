@@ -73,7 +73,6 @@ proc binary_swap {original_vt new_vt} {
                 set cell [lindex $swapped_cells $i]
                 swap_vt $cell $new_vt $original_vt
             }
-            # i think there's no need to update timing again in this case since we're reverting the operations
         }
         # update next cycle's number of swaps
         set percentage [expr {$percentage / 2}]
@@ -82,6 +81,78 @@ proc binary_swap {original_vt new_vt} {
     return
 }
 
+proc linear_swap {step original_vt new_vt} {
+    set priority_list [create_priority_list $original_vt]
+    set vt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == ${original_vt}VT"]
+    set num_cells [sizeof_collection $vt_cells]
+    set index 0
+    # set next_step 0
+    set consecutive_fails 0
+    set skipped_cells 0
+    while {$index < $num_cells} {
+        set success 0
+        set swapped_cells [list]
+        for {set i $skipped_cells} {$i < [expr {$skipped_cells + $step}]} {incr i} {
+            if {$i >= $num_cells} {
+                break
+            }
+            set cell [lindex [lindex $priority_list $i] 0]
+            swap_vt $cell $original_vt $new_vt
+            lappend swapped_cells $cell
+        }
+        update_timing -full
+        set result_timing [get_timing_paths -slack_lesser_than 0.0 -max_paths 1]
+        if {[sizeof_collection $result_timing] == 0} {
+            set success 1
+        }
+
+        if {$success} {
+            # update priority_list
+            set consecutive_fails 0
+            set priority_list [create_priority_list $original_vt]
+        } else {
+            # revert operations using swapped_cells list
+            for {set i 0} {$i < [llength $swapped_cells]} {incr i} {
+                set cell [lindex $swapped_cells $i]
+                swap_vt $cell $new_vt $original_vt
+            }
+            # update consecutive_fails
+            incr consecutive_fails
+            if {$consecutive_fails == 2} {
+                break
+            }
+
+            # update index by step/2
+            # update skipped_cells by step/2
+            # set next_step [expr {int(ceil($step / 2))}]
+            # set skipped_cells [expr {$skipped_cells + $next_step}]
+            # set index [expr {$index + $next_step}]
+            set skipped_cells [expr {$skipped_cells + $step}]
+        }
+        # update index by step
+        set index [expr {$index + $step}]
+        # print debug info
+        puts "index: $index skipped_cells: $skipped_cells"
+        puts "step: $step"
+        puts "consecutive_fails: $consecutive_fails"
+        puts "------------------------------------------------"
+    }
+}
+
+proc logarithmic_decrease {start_value n end_value} {
+    set log_sequence {}
+    
+    set log_start [expr {log($start_value) / log(10)}]
+    set log_end [expr {log($end_value) / log(10)}]
+    
+    for {set i 0} {$i < $n} {incr i} {
+        set t [expr {$i / double($n - 1)}]
+        set log_val [expr {pow(10, (1 - $t) * $log_start + $t * $log_end)}]
+        lappend log_sequence [expr {int(ceil($log_val))}]
+    }
+    
+    return $log_sequence
+}
 
 proc multiVth {} {
     set case1 0
@@ -92,6 +163,15 @@ proc multiVth {} {
         binary_swap L S
         binary_swap S H
         binary_swap L S
+        set cells [get_cells]
+        set num_cells [sizeof_collection $cells]
+        set steps [lrange [logarithmic_decrease $num_cells 9 3] 5 8]
+        # {11 5 2} gets us 4 points
+        foreach step $steps { 
+            linear_swap $step L S
+            linear_swap $step S H
+            linear_swap $step L S
+        }
     }
     return 1
 }
