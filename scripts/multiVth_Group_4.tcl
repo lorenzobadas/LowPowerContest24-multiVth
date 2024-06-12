@@ -81,7 +81,7 @@ proc binary_swap {original_vt new_vt} {
     return
 }
 
-proc linear_swap {step original_vt new_vt} {
+proc linear_swap {step original_vt new_vt max_fails} {
     set priority_list [create_priority_list $original_vt]
     set vt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == ${original_vt}VT"]
     set num_cells [sizeof_collection $vt_cells]
@@ -118,7 +118,8 @@ proc linear_swap {step original_vt new_vt} {
             }
             # update consecutive_fails
             incr consecutive_fails
-            if {$consecutive_fails == 2} {
+            # 4 points with 2 max fails
+            if {$consecutive_fails == $max_fails} {
                 break
             }
 
@@ -134,7 +135,7 @@ proc linear_swap {step original_vt new_vt} {
         # print debug info
         puts "index: $index skipped_cells: $skipped_cells"
         puts "step: $step"
-        puts "consecutive_fails: $consecutive_fails"
+        puts "consecutive_fails: $consecutive_fails, max_fails: $max_fails"
         puts "------------------------------------------------"
     }
 }
@@ -162,15 +163,19 @@ proc multiVth {} {
     } else {
         binary_swap L S
         binary_swap S H
-        binary_swap L S
+        # binary_swap L S
         set cells [get_cells]
         set num_cells [sizeof_collection $cells]
         set steps [lrange [logarithmic_decrease $num_cells 9 3] 5 8]
-        # {11 5 2} gets us 4 points
-        foreach step $steps { 
-            linear_swap $step L S
-            linear_swap $step S H
-            linear_swap $step L S
+        # {11 5 2} gets us 4 points (independently of benchmark used)
+        foreach step $steps {
+            set max_fails [expr {int($step * (2.0/3.0))}]
+            if {$max_fails < 2} {
+                set max_fails 2
+            }
+            linear_swap $step L S $max_fails
+            linear_swap $step S H $max_fails
+            # linear_swap $step L S
         }
     }
     return 1
