@@ -25,8 +25,7 @@ proc binary_swap {original_vt new_vt} {
     # if the number of swaps in the current cycle is 0, return
     set priority_list [create_priority_list $original_vt]
     set percentage 0.5
-    set vt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == ${original_vt}VT"]
-    set num_cells [sizeof_collection $vt_cells]
+    set num_cells [llength $priority_list]
     set num_swaps [expr {int($num_cells * $percentage)}]
     while {$num_swaps > 0} {
         set success 0
@@ -68,12 +67,26 @@ proc binary_swap {original_vt new_vt} {
     return
 }
 
-proc linear_swap {step original_vt new_vt max_consecutive_fails} {
+proc linear_swap {step original_vt new_vt max_consecutive_fails start_execution_time max_execution_time enable_execution_time_constraint} {
+    if {$enable_execution_time_constraint} {
+        set this_time [clock milliseconds]
+        set run_time [expr ($this_time - $start_execution_time)]
+        if {$run_time > $max_execution_time} {
+            return
+        }
+    }
     set priority_list [create_priority_list $original_vt]
     set num_cells [llength $priority_list]
     set consecutive_fails 0
     set skipped_cells 0
     while {$skipped_cells < $num_cells} {
+        if {$enable_execution_time_constraint} {
+            set this_time [clock milliseconds]
+            set run_time [expr ($this_time - $start_execution_time)]
+            if {$run_time > $max_execution_time} {
+                break
+            }
+        }
         set success 0
         set swapped_cells [list]
         for {set i $skipped_cells} {$i < [expr {$skipped_cells + $step}]} {incr i} {
@@ -134,27 +147,31 @@ proc logarithmic_decrease {start_value n end_value} {
 }
 
 proc multiVth {} {
-    set case1 0
+    set start_execution_time [clock milliseconds]
+    set max_execution_time 170000 ; # milliseconds
 
-    if {$case1} {
-        set original_vt1 L
-        set new_vt1 H
-        set original_vt2 L
-        set new_vt2 S
-    } else {
-        set original_vt1 L
-        set new_vt1 S
-        set original_vt2 S
-        set new_vt2 H
-    }
+    set original_vt1 L
+    set new_vt1 S
+    set original_vt2 S
+    set new_vt2 H
+
     binary_swap $original_vt1 $new_vt1
     binary_swap $original_vt2 $new_vt2
     set cells [get_cells]
     set num_cells [sizeof_collection $cells]
     set steps [lrange [logarithmic_decrease $num_cells 9 3] 5 8]
     foreach step $steps {
-        linear_swap $step $original_vt1 $new_vt1 15
-        linear_swap 15 $original_vt2 $new_vt2 7
+        linear_swap $step $original_vt1 $new_vt1 15 0 0 0
+        linear_swap 15 $original_vt2 $new_vt2 7 0 0 0
     }
+    linear_swap 2 $original_vt1 $new_vt1 15 $start_execution_time $max_execution_time 1
+    linear_swap 2 $original_vt2 $new_vt2 5 $start_execution_time $max_execution_time 1
+    linear_swap 2 $original_vt1 $new_vt1 15 $start_execution_time $max_execution_time 1
+    linear_swap 2 $original_vt2 $new_vt2 5 $start_execution_time $max_execution_time 1
+    linear_swap 1 $original_vt1 $new_vt1 15 $start_execution_time $max_execution_time 1
+    linear_swap 1 $original_vt2 $new_vt2 5 $start_execution_time $max_execution_time 1
+    linear_swap 1 $original_vt1 $new_vt1 15 $start_execution_time $max_execution_time 1
+    linear_swap 1 $original_vt2 $new_vt2 5 $start_execution_time $max_execution_time 1
+    
     return 1
 }

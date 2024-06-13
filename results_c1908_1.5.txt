@@ -8,71 +8,7 @@
  Inc. This software may only be used in accordance with the terms and conditions
  of a written license agreement with Synopsys, Inc. All other use, reproduction,
             or distribution of this software is strictly prohibited.
-##	+----------------------------------------------------------------
-##	|		 Synthesis and Optimization of Digital Systems			|
-##	|				Politecnico di Torino - TO - Italy				|
-##	|						DAUIN - EDA GROUP						|
-##	+----------------------------------------------------------------
-##	|	author: Valentino Peluso									|
-##	|	mail:	valentino.peluso@polito.it							|
-##	|	title:	pt_contest.tcl										|
-##	+----------------------------------------------------------------
-##	| 	Copyright 2024 DAUIN - EDA GROUP							|
-##	+----------------------------------------------------------------
-######################################################################
-##
-## SPECIFY LIBRARIES
-##
-######################################################################
-# SOURCE SETUP FILE
-source "./tech/STcmos65/synopsys_pt.setup"
-* CORE65LPLVT_nom_1.20V_25C.db CORE65LPSVT_nom_1.20V_25C.db CORE65LPHVT_nom_1.20V_25C.db
-* CORE65LPLVT_nom_1.20V_25C.db CORE65LPSVT_nom_1.20V_25C.db CORE65LPHVT_nom_1.20V_25C.db
-# DEFINE OPTIONS
-set report_default_significant_digits 6
-6
-set power_enable_analysis true
 Information: Checked out license 'PrimePower' (PT-019)
-true
-set timing_save_pin_arrival_and_slack true
-true
-# SUPPRESS WARNING MESSAGES
-suppress_message RC-004
-suppress_message PTE-003
-suppress_message UID-401
-suppress_message ENV-003
-suppress_message UITE-489
-suppress_message CMD-041
-suppress_message NED-045
-suppress_message LNK-041
-suppress_message UITE-502
-suppress_message PTE-139
-suppress_message PTE-018
-suppress_message PWR-246
-suppress_message PWR-601
-suppress_message PWR-602
-######################################################################
-##
-## READ DESIGN
-##
-######################################################################
-# DEFINE CIRCUITS
-set blockName "c1908"
-c1908
-# set blockName "c5315"
-# DEFINE INPUT FILES
-# set dir "./saved/${blockName}_2.0/synthesis"
-set dir "./saved/${blockName}_1.5/synthesis"
-./saved/c1908_1.5/synthesis
-# set dir "./saved/${blockName}_1.0/synthesis"
-set in_verilog_filename "${dir}/${blockName}_postsyn.v"
-./saved/c1908_1.5/synthesis/c1908_postsyn.v
-set in_sdc_filename "${dir}/${blockName}_postsyn.sdc"
-./saved/c1908_1.5/synthesis/c1908_postsyn.sdc
-# READ
-read_verilog $in_verilog_filename
-1
-read_sdc -version 1.3 $in_sdc_filename
 Loading verilog file '/space/s329861/WORK_CONTEST/saved/c1908_1.5/synthesis/c1908_postsyn.v'
 Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPLVT_nom_1.20V_25C.db'
 Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPSVT_nom_1.20V_25C.db'
@@ -85,75 +21,15 @@ Information: total 2540 library cells are unused (LNK-046)
 
 Reading SDC version 1.3...
 Warning: Creating virtual clock named 'clk' with no sources. (UITE-121)
-1
-1
-update_timing -full
-1
-######################################################################
-##
-## MULTI-VTH OPTIMIZATION
-##
-######################################################################
-set_user_attribute [find library CORE65LPLVT] default_threshold_voltage_group LVT
 Warning: Legacy rail_connection library specifications will no longer be supported in PrimePower starting 2018.06 release. (PWR-604)
 Set attribute 'default_threshold_voltage_group' on 'CORE65LPLVT'
-set_user_attribute [find library CORE65LPSVT] default_threshold_voltage_group SVT
 Set attribute 'default_threshold_voltage_group' on 'CORE65LPSVT'
-set_user_attribute [find library CORE65LPHVT] default_threshold_voltage_group HVT
 Set attribute 'default_threshold_voltage_group' on 'CORE65LPHVT'
-set leakage_initial [get_attribute [current_design] leakage_power]
 Information: Running switching activity propagation with 4 threads!
-7.373573297914104e-07
-set original_cells ""
-foreach_in_collection cell [get_cells] {
-    set full_name [get_attribute $cell full_name]
-    set ref_name [get_attribute $cell ref_name]
-    lappend original_cells "$full_name $ref_name"
-}
-puts $original_cells
 {U225 HS65_LLS_XOR2X3} {U233 HS65_LL_IVX2} {U236 HS65_LLS_XNOR3X2} {U249 HS65_LL_NOR2X6} {U274 HS65_LLS_XOR2X3} {U321 HS65_LLS_XOR3X2} {U323 HS65_LLS_XNOR3X2} {U329 HS65_LL_NAND2X7} {U331 HS65_LLS_XOR3X2} {U332 HS65_LL_IVX9} {U338 HS65_LL_IVX9} {U339 HS65_LL_IVX9} {U341 HS65_LLS_XNOR3X2} {U345 HS65_LL_IVX9} {U346 HS65_LL_NAND2X7} {U350 HS65_LL_IVX9} {U351 HS65_LL_IVX9} {U353 HS65_LL_IVX9} {U355 HS65_LL_IVX9} {U364 HS65_LL_IVX7} {U196 HS65_LLS_XOR2X3} {U215 HS65_LL_IVX2} {U187 HS65_LLS_XOR2X3} {U188 HS65_LLS_XNOR2X6} {U199 HS65_LLS_XOR2X6} {U203 HS65_LL_NOR2X6} {U224 HS65_LLS_XOR2X6} {U243 HS65_LL_NAND3X2} {U248 HS65_LL_NAND3X2} {U260 HS65_LL_OAI21X2} {U273 HS65_LL_NAND3X2} {U275 HS65_LL_NAND3X2} {U322 HS65_LL_NOR3AX2} {U330 HS65_LL_NOR3AX2} {U337 HS65_LLS_XNOR2X6} {U354 HS65_LL_NAND2X7} {U356 HS65_LL_NAND2AX7} {U217 HS65_LL_NAND2X2} {U348 HS65_LL_AO12X4} {U360 HS65_LLS_XOR2X3} {U197 HS65_LLS_XOR2X3} {U189 HS65_LLS_XOR2X6} {U216 HS65_LLS_XOR2X6} {U226 HS65_LL_CBI4I1X3} {U244 HS65_LL_NOR3X1} {U267 HS65_LLS_XOR2X6} {U272 HS65_LL_CBI4I1X3} {U347 HS65_LLS_XOR3X2} {U357 HS65_LL_NAND2X7} {U362 HS65_LL_NAND2X7} {U363 HS65_LL_OA12X9} {U279 HS65_LL_NAND2X2} {U280 HS65_LL_NAND2X2} {U288 HS65_LLS_XOR2X3} {U190 HS65_LLS_XOR2X6} {U200 HS65_LLS_XNOR2X6} {U269 HS65_LL_IVX2} {U270 HS65_LL_OAI21X2} {U278 HS65_LL_CBI4I6X2} {U317 HS65_LLS_XOR2X6} {U319 HS65_LLS_XNOR3X2} {U336 HS65_LL_IVX9} {U194 HS65_LLS_XOR2X3} {U261 HS65_LL_AOI21X2} {U268 HS65_LL_OAI32X2} {U306 HS65_LL_NAND3X5} {U312 HS65_LLS_XOR2X6} {U334 HS65_LL_AOI32X5} {U340 HS65_LLS_XOR3X2} {U219 HS65_LL_NAND3X5} {U245 HS65_LLS_XOR2X3} {U305 HS65_LL_CBI4I1X5} {U311 HS65_LL_NAND3X5} {U333 HS65_LLS_XOR2X6} {U349 HS65_LL_NAND3X5} {U237 HS65_LL_CBI4I1X5} {U277 HS65_LL_NAND3X5} {U286 HS65_LL_IVX9} {U308 HS65_LL_NAND3X5} {U310 HS65_LL_CBI4I1X5} {U344 HS65_LL_CB4I1X4} {U223 HS65_LL_NAND2X2} {U230 HS65_LL_NOR2X2} {U239 HS65_LL_NOR2X3} {U240 HS65_LL_NOR2X5} {U253 HS65_LL_IVX4} {U276 HS65_LL_CB4I1X9} {U283 HS65_LL_NOR2AX3} {U307 HS65_LL_CBI4I1X5} {U184 HS65_LL_NOR2AX3} {U198 HS65_LL_NAND2X7} {U281 HS65_LL_IVX9} {U282 HS65_LL_IVX9} {U304 HS65_LL_NOR2AX3} {U309 HS65_LL_NAND2X7} {U314 HS65_LL_NAND2X7} {U315 HS65_LL_NOR2AX3} {U343 HS65_LL_IVX2} {U222 HS65_LL_NOR2AX6} {U241 HS65_LL_IVX9} {U242 HS65_LL_NOR3X4} {U256 HS65_LL_NOR3X1} {U264 HS65_LL_IVX2} {U266 HS65_LL_NOR3X1} {U284 HS65_LL_IVX9} {U303 HS65_LL_NOR3AX2} {U342 HS65_LL_CBI4I6X5} {U221 HS65_LL_NOR2AX3} {U228 HS65_LL_AND2X4} {U229 HS65_LL_NAND3X5} {U252 HS65_LL_AOI33X2} {U255 HS65_LL_AO33X4} {U265 HS65_LL_AND3X4} {U289 HS65_LL_AND3X9} {U302 HS65_LL_NOR3AX2} {U313 HS65_LL_NOR4ABX2} {U318 HS65_LL_AND2X4} {U293 HS65_LL_IVX2} {U195 HS65_LL_NOR3AX4} {U204 HS65_LL_AND2X4} {U205 HS65_LL_AND2X4} {U210 HS65_LL_NAND3X5} {U212 HS65_LL_NAND3X5} {U214 HS65_LL_NAND3X5} {U218 HS65_LL_NAND3X3} {U231 HS65_LL_NAND2X7} {U250 HS65_LL_AND3X4} {U251 HS65_LL_AND3X4} {U254 HS65_LL_AND3X4} {U258 HS65_LL_AOI13X2} {U263 HS65_LL_AOI311X2} {U285 HS65_LL_NAND3X5} {U291 HS65_LL_XOR2X18} {U316 HS65_LL_NAND4ABX3} {U324 HS65_LL_XOR2X18} {U352 HS65_LL_NAND2X4} {U181 HS65_LL_NOR4ABX2} {U191 HS65_LL_NOR2AX3} {U206 HS65_LL_XNOR2X18} {U207 HS65_LL_XNOR2X18} {U208 HS65_LL_XNOR2X18} {U209 HS65_LL_XNOR2X18} {U211 HS65_LL_XNOR2X18} {U213 HS65_LL_XNOR2X18} {U220 HS65_LL_XNOR2X18} {U227 HS65_LL_NAND2X7} {U246 HS65_LL_NAND2X4} {U257 HS65_LL_OAI311X2} {U287 HS65_LL_NAND2X7} {U290 HS65_LL_XOR2X18} {U325 HS65_LL_XOR2X18} {U326 HS65_LL_XOR2X18} {U327 HS65_LL_XOR2X18} {U328 HS65_LL_XOR2X18} {U185 HS65_LL_NOR4ABX4} {U232 HS65_LL_NAND4X9} {U238 HS65_LL_XNOR2X18} {U247 HS65_LL_XNOR2X18} {U193 HS65_LL_NOR4ABX4} {U259 HS65_LL_OR2X4} {U5 HS65_LL_XOR3X18} {U186 HS65_LL_AND2X18} {U192 HS65_LL_NOR2X2} {U10 HS65_LL_XOR3X18} {U47 HS65_LL_NAND4ABX19} {U201 HS65_LL_NOR2X6} {U202 HS65_LL_IVX9} {U271 HS65_LL_NAND2X2} {U335 HS65_LL_NAND2X2} {U235 HS65_LLS_XOR2X3} {U262 HS65_LL_OR2X4} {U297 HS65_LL_NOR3X4} {U359 HS65_LLS_XOR2X6} {U182 HS65_LL_NOR2X2} {U183 HS65_LL_NOR2X2} {U234 HS65_LL_AND2ABX18} {U296 HS65_LL_CBI4I6X5} {U299 HS65_LLS_XNOR2X6} {U301 HS65_LLS_XOR2X6} {U358 HS65_LL_AND2ABX18} {U320 HS65_LLS_XNOR2X3} {U292 HS65_LL_AND2ABX18} {U298 HS65_LL_AND2ABX18} {U300 HS65_LL_AND2ABX18} {U295 HS65_LLS_XOR2X3} {U294 HS65_LL_AND2ABX18}
-# Run multiVth assignment
-source ./scripts/multiVth_Group_4.tcl
-set start_time [clock milliseconds]
-1718237882803
-multiVth
-1
-set end_time [clock milliseconds]
-1718237920965
-# Force full timing update
-update_timing -full
-1
-# Check: The slack of the most critical path of the circuit is positive (>= 0).
-set wrt_slack [get_attribute [get_timing_paths] slack]
-0.000522
-if {$wrt_slack < 0} {
-    error "Slack is negative: $wrt_slack"
-} else {
-    puts "(OK) Slack is positive: $wrt_slack"
-}
-(OK) Slack is positive: 0.000522
-# Check: Logic gates must mantain the same cell footprint, i.e., same size and area as before optimization.
-foreach cell_footprint $original_cells {
-    set full_name [lindex $cell_footprint 0]
-    set original_ref_name [lindex $cell_footprint 1]
-    set cell [get_cell $full_name]
-    set ref_name [get_attribute $cell ref_name]
-    regsub -all {_L[HS]} $ref_name "_LL" ref_name
-    if {($original_ref_name eq $ref_name) == 0} {
-        error "The cell $full_name has a different footprint."
-    }
-}
-puts "(OK) All the cells mantained the same footprint."
+(OK) Slack is positive: 0.000034
 (OK) All the cells mantained the same footprint.
-set run_time [expr ($end_time - $start_time) / 1000.0]
-38.162
-if {$run_time > 180.0} {
-    error "Maximum Optimization Run Time exceeded: ${run_time}s."
-} 
-puts "(OK) Optimization Run Time: ${run_time}s."
-(OK) Optimization Run Time: 38.162s.
-# Reporting
-report_threshold_voltage_group
+(OK) Optimization Run Time: 55.199s.
 ------------------------------------------------------------------------------------------------------------------------
                         Threshold Voltage Group Report
 
@@ -173,11 +49,11 @@ memory                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)   
 black_box                 0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 io_pad                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 clock_network             0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
-combinational            34 ( 18.28%)        87 ( 46.77%)        65 ( 34.95%)       186 (100.00%)       
+combinational            44 ( 23.66%)        87 ( 46.77%)        55 ( 29.57%)       186 (100.00%)       
 register                  0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 sequential                0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 ------------------------------------------------------------------------------------------------------------------------
-Total                    34 ( 18.28%)        87 ( 46.77%)        65 ( 34.95%)       186 (100.00%)
+Total                    44 ( 23.66%)        87 ( 46.77%)        55 ( 29.57%)       186 (100.00%)
 ------------------------------------------------------------------------------------------------------------------------
 SUMMARY : 
 
@@ -188,39 +64,27 @@ SUMMARY :
 
 ------------------------------------------------------------------------------------------------------------------------
 
-1
-set leakage_final [get_attribute [current_design] leakage_power]
 Information: Running switching activity propagation with 4 threads!
-2.507780835403397e-07
-set savings [expr {100 * ($leakage_initial - $leakage_final) / $leakage_initial}]
-65.9896127145
-puts "Leakage Power Savings=$savings %"
-Leakage Power Savings=65.9896127145 %
-######################################################################
-##
-## EXIT
-##
-######################################################################
-exit
+Leakage Power Savings=66.2361893135 %
 Suppressed Messages Summary:
 Id          Severity      Occurrences   Suppressed
 -------------------------------------------------------------------------------
 PWR-246     Warning                 2            2
-NED-045     Information          2401         2401
-PTE-139     Information           289          289
-ENV-003     Information           282          282
-PTE-018     Information           140          140
+NED-045     Information          2683         2683
+PTE-139     Information           483          483
+ENV-003     Information           468          468
+PTE-018     Information           233          233
 LNK-041     Information            98           98
-CMD-041     Information            18           18
+CMD-041     Information            19           19
 PWR-601     Information             2            2
 PWR-602     Information             2            2
 Total 9 types of messages are suppressed
 
-Timing updates: 150 (9 implicit, 141 explicit) (9 incremental, 141 full, 0 logical)
+Timing updates: 251 (17 implicit, 234 explicit) (17 incremental, 234 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 1174.63 MB
-CPU usage for this session: 71 seconds 
-Elapsed time for this session: 45 seconds
+Maximum memory usage for this session: 1167.98 MB
+CPU usage for this session: 101 seconds 
+Elapsed time for this session: 62 seconds
 Diagnostics summary: 2 warnings, 5 informationals
 
 Thank you for using pt_shell!
