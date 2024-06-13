@@ -46,11 +46,19 @@ suppress_message PWR-602
 ##
 ######################################################################
 # DEFINE CIRCUITS
-set blockName "c1908"
+# set blockName "c1908"
 # set blockName "c5315"
 
+if {$clock == 1.0} {
+    set dir "./saved/${blockName}_1.0/synthesis"
+} elseif {$clock == 1.5} {
+    set dir "./saved/${blockName}_1.5/synthesis"
+} else {
+    set dir "./saved/${blockName}_2.0/synthesis"
+}
+
 # DEFINE INPUT FILES
-set dir "./saved/${blockName}_2.0/synthesis"
+# set dir "./saved/${blockName}_2.0/synthesis"
 # set dir "./saved/${blockName}_1.5/synthesis"
 # set dir "./saved/${blockName}_1.0/synthesis"
 set in_verilog_filename "${dir}/${blockName}_postsyn.v"
@@ -80,7 +88,7 @@ foreach_in_collection cell [get_cells] {
     set ref_name [get_attribute $cell ref_name]
     lappend original_cells "$full_name $ref_name"
 }
-
+puts $original_cells
 # Run multiVth assignment
 source ./scripts/multiVth_Group_4.tcl
 set start_time [clock milliseconds]
