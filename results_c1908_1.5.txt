@@ -115,191 +115,503 @@ puts $original_cells
 # Run multiVth assignment
 source ./scripts/multiVth_Group_4.tcl
 set start_time [clock milliseconds]
-1718228222403
+1718236517134
 multiVth
-index: 15 skipped_cells: 15
+num_cells: 147 skipped_cells: 7
 step: 15
-consecutive_fails: 1, max_fails: 10
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 30 skipped_cells: 30
+num_cells: 132 skipped_cells: 0
 step: 15
-consecutive_fails: 2, max_fails: 10
+consecutive_fails: 0, max_consecutive_fails: 15
 ------------------------------------------------
-index: 45 skipped_cells: 45
+num_cells: 132 skipped_cells: 7
 step: 15
-consecutive_fails: 3, max_fails: 10
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 60 skipped_cells: 60
+num_cells: 132 skipped_cells: 14
 step: 15
-consecutive_fails: 4, max_fails: 10
+consecutive_fails: 2, max_consecutive_fails: 15
 ------------------------------------------------
-index: 75 skipped_cells: 75
+num_cells: 117 skipped_cells: 0
 step: 15
-consecutive_fails: 5, max_fails: 10
+consecutive_fails: 0, max_consecutive_fails: 15
 ------------------------------------------------
-index: 90 skipped_cells: 90
+num_cells: 117 skipped_cells: 7
 step: 15
-consecutive_fails: 6, max_fails: 10
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 105 skipped_cells: 105
+num_cells: 117 skipped_cells: 14
 step: 15
-consecutive_fails: 7, max_fails: 10
+consecutive_fails: 2, max_consecutive_fails: 15
 ------------------------------------------------
-index: 120 skipped_cells: 120
+num_cells: 117 skipped_cells: 21
 step: 15
-consecutive_fails: 8, max_fails: 10
+consecutive_fails: 3, max_consecutive_fails: 15
 ------------------------------------------------
-index: 135 skipped_cells: 135
+num_cells: 117 skipped_cells: 28
 step: 15
-consecutive_fails: 9, max_fails: 10
+consecutive_fails: 4, max_consecutive_fails: 15
 ------------------------------------------------
-index: 15 skipped_cells: 15
+num_cells: 117 skipped_cells: 35
 step: 15
-consecutive_fails: 1, max_fails: 10
+consecutive_fails: 5, max_consecutive_fails: 15
 ------------------------------------------------
-index: 9 skipped_cells: 9
+num_cells: 117 skipped_cells: 42
+step: 15
+consecutive_fails: 6, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 49
+step: 15
+consecutive_fails: 7, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 56
+step: 15
+consecutive_fails: 8, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 63
+step: 15
+consecutive_fails: 9, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 70
+step: 15
+consecutive_fails: 10, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 77
+step: 15
+consecutive_fails: 11, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 84
+step: 15
+consecutive_fails: 12, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 91
+step: 15
+consecutive_fails: 13, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 117 skipped_cells: 98
+step: 15
+consecutive_fails: 14, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 35 skipped_cells: 7
+step: 15
+consecutive_fails: 1, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 35 skipped_cells: 14
+step: 15
+consecutive_fails: 2, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 35 skipped_cells: 21
+step: 15
+consecutive_fails: 3, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 35 skipped_cells: 28
+step: 15
+consecutive_fails: 4, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 35 skipped_cells: 35
+step: 15
+consecutive_fails: 5, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 117 skipped_cells: 4
 step: 9
-consecutive_fails: 1, max_fails: 6
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 18 skipped_cells: 9
+num_cells: 108 skipped_cells: 0
 step: 9
-consecutive_fails: 0, max_fails: 6
+consecutive_fails: 0, max_consecutive_fails: 15
 ------------------------------------------------
-index: 27 skipped_cells: 18
+num_cells: 108 skipped_cells: 4
 step: 9
-consecutive_fails: 1, max_fails: 6
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 36 skipped_cells: 18
+num_cells: 108 skipped_cells: 8
 step: 9
-consecutive_fails: 0, max_fails: 6
+consecutive_fails: 2, max_consecutive_fails: 15
 ------------------------------------------------
-index: 45 skipped_cells: 27
+num_cells: 108 skipped_cells: 12
 step: 9
-consecutive_fails: 1, max_fails: 6
+consecutive_fails: 3, max_consecutive_fails: 15
 ------------------------------------------------
-index: 54 skipped_cells: 36
+num_cells: 108 skipped_cells: 16
 step: 9
-consecutive_fails: 2, max_fails: 6
+consecutive_fails: 4, max_consecutive_fails: 15
 ------------------------------------------------
-index: 63 skipped_cells: 45
+num_cells: 108 skipped_cells: 20
 step: 9
-consecutive_fails: 3, max_fails: 6
+consecutive_fails: 5, max_consecutive_fails: 15
 ------------------------------------------------
-index: 72 skipped_cells: 54
+num_cells: 108 skipped_cells: 24
 step: 9
-consecutive_fails: 4, max_fails: 6
+consecutive_fails: 6, max_consecutive_fails: 15
 ------------------------------------------------
-index: 81 skipped_cells: 63
+num_cells: 108 skipped_cells: 28
 step: 9
-consecutive_fails: 5, max_fails: 6
+consecutive_fails: 7, max_consecutive_fails: 15
 ------------------------------------------------
-index: 9 skipped_cells: 9
+num_cells: 108 skipped_cells: 32
 step: 9
-consecutive_fails: 1, max_fails: 6
+consecutive_fails: 8, max_consecutive_fails: 15
 ------------------------------------------------
-index: 18 skipped_cells: 18
+num_cells: 108 skipped_cells: 36
 step: 9
-consecutive_fails: 2, max_fails: 6
+consecutive_fails: 9, max_consecutive_fails: 15
 ------------------------------------------------
-index: 27 skipped_cells: 27
+num_cells: 108 skipped_cells: 40
 step: 9
-consecutive_fails: 3, max_fails: 6
+consecutive_fails: 10, max_consecutive_fails: 15
 ------------------------------------------------
-index: 6 skipped_cells: 6
+num_cells: 108 skipped_cells: 44
+step: 9
+consecutive_fails: 11, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 108 skipped_cells: 48
+step: 9
+consecutive_fails: 12, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 108 skipped_cells: 52
+step: 9
+consecutive_fails: 13, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 108 skipped_cells: 56
+step: 9
+consecutive_fails: 14, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 44 skipped_cells: 7
+step: 15
+consecutive_fails: 1, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 44 skipped_cells: 14
+step: 15
+consecutive_fails: 2, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 44 skipped_cells: 21
+step: 15
+consecutive_fails: 3, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 44 skipped_cells: 28
+step: 15
+consecutive_fails: 4, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 44 skipped_cells: 35
+step: 15
+consecutive_fails: 5, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 44 skipped_cells: 42
+step: 15
+consecutive_fails: 6, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 108 skipped_cells: 3
 step: 6
-consecutive_fails: 1, max_fails: 4
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 12 skipped_cells: 6
+num_cells: 102 skipped_cells: 0
 step: 6
-consecutive_fails: 0, max_fails: 4
+consecutive_fails: 0, max_consecutive_fails: 15
 ------------------------------------------------
-index: 18 skipped_cells: 6
+num_cells: 102 skipped_cells: 3
 step: 6
-consecutive_fails: 0, max_fails: 4
+consecutive_fails: 1, max_consecutive_fails: 15
 ------------------------------------------------
-index: 24 skipped_cells: 6
+num_cells: 102 skipped_cells: 6
 step: 6
-consecutive_fails: 0, max_fails: 4
+consecutive_fails: 2, max_consecutive_fails: 15
 ------------------------------------------------
-index: 30 skipped_cells: 12
+num_cells: 102 skipped_cells: 9
 step: 6
-consecutive_fails: 1, max_fails: 4
+consecutive_fails: 3, max_consecutive_fails: 15
 ------------------------------------------------
-index: 36 skipped_cells: 18
+num_cells: 102 skipped_cells: 12
 step: 6
-consecutive_fails: 2, max_fails: 4
+consecutive_fails: 4, max_consecutive_fails: 15
 ------------------------------------------------
-index: 42 skipped_cells: 24
+num_cells: 102 skipped_cells: 15
 step: 6
-consecutive_fails: 3, max_fails: 4
+consecutive_fails: 5, max_consecutive_fails: 15
 ------------------------------------------------
-index: 6 skipped_cells: 6
+num_cells: 102 skipped_cells: 18
 step: 6
-consecutive_fails: 1, max_fails: 4
+consecutive_fails: 6, max_consecutive_fails: 15
 ------------------------------------------------
-index: 12 skipped_cells: 12
+num_cells: 102 skipped_cells: 21
 step: 6
-consecutive_fails: 2, max_fails: 4
+consecutive_fails: 7, max_consecutive_fails: 15
 ------------------------------------------------
-index: 18 skipped_cells: 18
+num_cells: 102 skipped_cells: 24
 step: 6
-consecutive_fails: 3, max_fails: 4
+consecutive_fails: 8, max_consecutive_fails: 15
 ------------------------------------------------
-index: 3 skipped_cells: 3
-step: 3
-consecutive_fails: 1, max_fails: 2
+num_cells: 102 skipped_cells: 27
+step: 6
+consecutive_fails: 9, max_consecutive_fails: 15
 ------------------------------------------------
-index: 6 skipped_cells: 3
-step: 3
-consecutive_fails: 0, max_fails: 2
+num_cells: 102 skipped_cells: 30
+step: 6
+consecutive_fails: 10, max_consecutive_fails: 15
 ------------------------------------------------
-index: 9 skipped_cells: 3
-step: 3
-consecutive_fails: 0, max_fails: 2
+num_cells: 102 skipped_cells: 33
+step: 6
+consecutive_fails: 11, max_consecutive_fails: 15
 ------------------------------------------------
-index: 12 skipped_cells: 3
-step: 3
-consecutive_fails: 0, max_fails: 2
+num_cells: 102 skipped_cells: 36
+step: 6
+consecutive_fails: 12, max_consecutive_fails: 15
 ------------------------------------------------
-index: 15 skipped_cells: 6
-step: 3
-consecutive_fails: 1, max_fails: 2
+num_cells: 102 skipped_cells: 39
+step: 6
+consecutive_fails: 13, max_consecutive_fails: 15
 ------------------------------------------------
-index: 18 skipped_cells: 6
-step: 3
-consecutive_fails: 0, max_fails: 2
+num_cells: 102 skipped_cells: 42
+step: 6
+consecutive_fails: 14, max_consecutive_fails: 15
 ------------------------------------------------
-index: 21 skipped_cells: 9
-step: 3
-consecutive_fails: 1, max_fails: 2
+num_cells: 50 skipped_cells: 7
+step: 15
+consecutive_fails: 1, max_consecutive_fails: 7
 ------------------------------------------------
-index: 3 skipped_cells: 3
-step: 3
-consecutive_fails: 1, max_fails: 2
+num_cells: 50 skipped_cells: 14
+step: 15
+consecutive_fails: 2, max_consecutive_fails: 7
 ------------------------------------------------
-index: 6 skipped_cells: 3
-step: 3
-consecutive_fails: 0, max_fails: 2
+num_cells: 50 skipped_cells: 21
+step: 15
+consecutive_fails: 3, max_consecutive_fails: 7
 ------------------------------------------------
-index: 9 skipped_cells: 6
+num_cells: 50 skipped_cells: 28
+step: 15
+consecutive_fails: 4, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 50 skipped_cells: 35
+step: 15
+consecutive_fails: 5, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 50 skipped_cells: 42
+step: 15
+consecutive_fails: 6, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 102 skipped_cells: 1
 step: 3
-consecutive_fails: 1, max_fails: 2
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 102 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 102 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 102 skipped_cells: 4
+step: 3
+consecutive_fails: 4, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 99 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 99 skipped_cells: 1
+step: 3
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 99 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 99 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 1
+step: 3
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 4
+step: 3
+consecutive_fails: 4, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 5
+step: 3
+consecutive_fails: 5, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 96 skipped_cells: 6
+step: 3
+consecutive_fails: 6, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 1
+step: 3
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 4
+step: 3
+consecutive_fails: 4, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 5
+step: 3
+consecutive_fails: 5, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 6
+step: 3
+consecutive_fails: 6, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 7
+step: 3
+consecutive_fails: 7, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 8
+step: 3
+consecutive_fails: 8, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 93 skipped_cells: 9
+step: 3
+consecutive_fails: 9, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 1
+step: 3
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 4
+step: 3
+consecutive_fails: 4, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 90 skipped_cells: 5
+step: 3
+consecutive_fails: 5, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 0
+step: 3
+consecutive_fails: 0, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 1
+step: 3
+consecutive_fails: 1, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 2
+step: 3
+consecutive_fails: 2, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 3
+step: 3
+consecutive_fails: 3, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 4
+step: 3
+consecutive_fails: 4, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 5
+step: 3
+consecutive_fails: 5, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 6
+step: 3
+consecutive_fails: 6, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 7
+step: 3
+consecutive_fails: 7, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 8
+step: 3
+consecutive_fails: 8, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 9
+step: 3
+consecutive_fails: 9, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 10
+step: 3
+consecutive_fails: 10, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 11
+step: 3
+consecutive_fails: 11, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 12
+step: 3
+consecutive_fails: 12, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 13
+step: 3
+consecutive_fails: 13, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 87 skipped_cells: 14
+step: 3
+consecutive_fails: 14, max_consecutive_fails: 15
+------------------------------------------------
+num_cells: 65 skipped_cells: 7
+step: 15
+consecutive_fails: 1, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 65 skipped_cells: 14
+step: 15
+consecutive_fails: 2, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 65 skipped_cells: 21
+step: 15
+consecutive_fails: 3, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 65 skipped_cells: 28
+step: 15
+consecutive_fails: 4, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 65 skipped_cells: 35
+step: 15
+consecutive_fails: 5, max_consecutive_fails: 7
+------------------------------------------------
+num_cells: 65 skipped_cells: 42
+step: 15
+consecutive_fails: 6, max_consecutive_fails: 7
 ------------------------------------------------
 1
 set end_time [clock milliseconds]
-1718228253837
+1718236555160
 # Force full timing update
 update_timing -full
 1
 # Check: The slack of the most critical path of the circuit is positive (>= 0).
 set wrt_slack [get_attribute [get_timing_paths] slack]
-0.000447
+0.000522
 if {$wrt_slack < 0} {
     error "Slack is negative: $wrt_slack"
 } else {
     puts "(OK) Slack is positive: $wrt_slack"
 }
-(OK) Slack is positive: 0.000447
+(OK) Slack is positive: 0.000522
 # Check: Logic gates must mantain the same cell footprint, i.e., same size and area as before optimization.
 foreach cell_footprint $original_cells {
     set full_name [lindex $cell_footprint 0]
@@ -314,12 +626,12 @@ foreach cell_footprint $original_cells {
 puts "(OK) All the cells mantained the same footprint."
 (OK) All the cells mantained the same footprint.
 set run_time [expr ($end_time - $start_time) / 1000.0]
-31.434
+38.026
 if {$run_time > 180.0} {
     error "Maximum Optimization Run Time exceeded: ${run_time}s."
 } 
 puts "(OK) Optimization Run Time: ${run_time}s."
-(OK) Optimization Run Time: 31.434s.
+(OK) Optimization Run Time: 38.026s.
 # Reporting
 report_threshold_voltage_group
 ------------------------------------------------------------------------------------------------------------------------
@@ -341,11 +653,11 @@ memory                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)   
 black_box                 0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 io_pad                    0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 clock_network             0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
-combinational            37 ( 19.89%)        99 ( 53.23%)        50 ( 26.88%)       186 (100.00%)       
+combinational            34 ( 18.28%)        87 ( 46.77%)        65 ( 34.95%)       186 (100.00%)       
 register                  0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 sequential                0 (  0.00%)         0 (  0.00%)         0 (  0.00%)         0 (  0.00%)       
 ------------------------------------------------------------------------------------------------------------------------
-Total                    37 ( 19.89%)        99 ( 53.23%)        50 ( 26.88%)       186 (100.00%)
+Total                    34 ( 18.28%)        87 ( 46.77%)        65 ( 34.95%)       186 (100.00%)
 ------------------------------------------------------------------------------------------------------------------------
 SUMMARY : 
 
@@ -359,11 +671,11 @@ SUMMARY :
 1
 set leakage_final [get_attribute [current_design] leakage_power]
 Information: Running switching activity propagation with 4 threads!
-2.728911253806806e-07
+2.507780835403397e-07
 set savings [expr {100 * ($leakage_initial - $leakage_final) / $leakage_initial}]
-62.9906540079
+65.9896127145
 puts "Leakage Power Savings=$savings %"
-Leakage Power Savings=62.9906540079 %
+Leakage Power Savings=65.9896127145 %
 ######################################################################
 ##
 ## EXIT
@@ -374,21 +686,21 @@ Suppressed Messages Summary:
 Id          Severity      Occurrences   Suppressed
 -------------------------------------------------------------------------------
 PWR-246     Warning                 2            2
-NED-045     Information          1054         1054
-PTE-139     Information           131          131
-ENV-003     Information           124          124
-LNK-041     Information            94           94
-PTE-018     Information            61           61
+NED-045     Information          2401         2401
+PTE-139     Information           289          289
+ENV-003     Information           282          282
+PTE-018     Information           140          140
+LNK-041     Information            98           98
 CMD-041     Information            18           18
 PWR-601     Information             2            2
 PWR-602     Information             2            2
 Total 9 types of messages are suppressed
 
-Timing updates: 71 (9 implicit, 62 explicit) (9 incremental, 62 full, 0 logical)
+Timing updates: 150 (9 implicit, 141 explicit) (9 incremental, 141 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 1163.99 MB
-CPU usage for this session: 59 seconds 
-Elapsed time for this session: 38 seconds
+Maximum memory usage for this session: 1174.96 MB
+CPU usage for this session: 70 seconds 
+Elapsed time for this session: 45 seconds
 Diagnostics summary: 2 warnings, 5 informationals
 
 Thank you for using pt_shell!

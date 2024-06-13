@@ -86,10 +86,9 @@ proc linear_swap {step original_vt new_vt max_consecutive_fails} {
     set vt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == ${original_vt}VT"]
     set num_cells [sizeof_collection $vt_cells]
     set index 0
-    # set next_step 0
     set consecutive_fails 0
     set skipped_cells 0
-    while {$index < $num_cells} {
+    while {$skipped_cells < $num_cells} {
         set success 0
         set swapped_cells [list]
         for {set i $skipped_cells} {$i < [expr {$skipped_cells + $step}]} {incr i} {
@@ -110,6 +109,8 @@ proc linear_swap {step original_vt new_vt max_consecutive_fails} {
             # update priority_list
             set consecutive_fails 0
             set priority_list [create_priority_list $original_vt]
+            set num_cells [llength $priority_list]
+            set skipped_cells 0
         } else {
             # revert operations using swapped_cells list
             for {set i 0} {$i < [llength $swapped_cells]} {incr i} {
@@ -118,22 +119,14 @@ proc linear_swap {step original_vt new_vt max_consecutive_fails} {
             }
             # update consecutive_fails
             incr consecutive_fails
-            # 4 points with 2 max fails
             if {$consecutive_fails == $max_consecutive_fails} {
                 break
             }
-
-            # update index by step/2
-            # update skipped_cells by step/2
-            # set next_step [expr {int(ceil($step / 2))}]
-            # set skipped_cells [expr {$skipped_cells + $next_step}]
-            # set index [expr {$index + $next_step}]
-            set skipped_cells [expr {$skipped_cells + $step}]
+            # set skipped_cells [expr {$skipped_cells + $step}]
+            set skipped_cells [expr {$skipped_cells + int($step * 0.5)}]
         }
-        # update index by step
-        set index [expr {$index + $step}]
         # print debug info
-        puts "index: $index skipped_cells: $skipped_cells"
+        puts "num_cells: $num_cells skipped_cells: $skipped_cells"
         puts "step: $step"
         puts "consecutive_fails: $consecutive_fails, max_consecutive_fails: $max_consecutive_fails"
         puts "------------------------------------------------"
@@ -175,12 +168,20 @@ proc multiVth {} {
     set num_cells [sizeof_collection $cells]
     set steps [lrange [logarithmic_decrease $num_cells 9 3] 5 8]
     foreach step $steps {
-        set max_consecutive_fails [expr {int($step * (2.0/3.0))}]
-        if {$max_consecutive_fails < 2} {
-            set max_consecutive_fails 2
-        }
+        # set max_consecutive_fails [expr {int($step * (2.0/3.0))}]
+        # if {$max_consecutive_fails < 2} {
+        #     set max_consecutive_fails 2
+        # }
+
+        # ### BEST RESULT WITH 10 AND 9
+        # ### BEST RESULT WITH 12 AND 7 (300 ms too late tho)
+        # ### BEST RESULT WITH 15 AND 5 (20 s too late tho)
+        # ### BEST RESULT WITH 15 AND NO S to H (167 seconds)
+        set max_consecutive_fails 15
         linear_swap $step $original_vt1 $new_vt1 $max_consecutive_fails
-        linear_swap $step $original_vt2 $new_vt2 $max_consecutive_fails
+        # set max_consecutive_fails 5
+        # linear_swap $step $original_vt2 $new_vt2 $max_consecutive_fails
+        linear_swap 15 $original_vt2 $new_vt2 7
     }
     return 1
 }
