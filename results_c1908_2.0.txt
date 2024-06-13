@@ -73,8 +73,8 @@ set in_sdc_filename "${dir}/${blockName}_postsyn.sdc"
 read_verilog $in_verilog_filename
 1
 read_sdc -version 1.3 $in_sdc_filename
-Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPLVT_nom_1.20V_25C.db'
 Loading verilog file '/space/s329861/WORK_CONTEST/saved/c1908_2.0/synthesis/c1908_postsyn.v'
+Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPLVT_nom_1.20V_25C.db'
 Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPSVT_nom_1.20V_25C.db'
 Loading db file '/space/s329861/WORK_CONTEST/tech/STcmos65/CORE65LPHVT_nom_1.20V_25C.db'
 Linking design c1908...
@@ -115,191 +115,11 @@ puts $original_cells
 # Run multiVth assignment
 source ./scripts/multiVth_Group_4.tcl
 set start_time [clock milliseconds]
-1718236620487
+1718237840556
 multiVth
-num_cells: 12 skipped_cells: 0
-step: 14
-consecutive_fails: 0, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 7
-step: 14
-consecutive_fails: 1, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 14
-step: 14
-consecutive_fails: 2, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 95 skipped_cells: 7
-step: 15
-consecutive_fails: 1, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 14
-step: 15
-consecutive_fails: 2, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 21
-step: 15
-consecutive_fails: 3, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 28
-step: 15
-consecutive_fails: 4, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 35
-step: 15
-consecutive_fails: 5, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 42
-step: 15
-consecutive_fails: 6, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 12 skipped_cells: 4
-step: 9
-consecutive_fails: 1, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 8
-step: 9
-consecutive_fails: 2, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 12
-step: 9
-consecutive_fails: 3, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 95 skipped_cells: 7
-step: 15
-consecutive_fails: 1, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 14
-step: 15
-consecutive_fails: 2, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 21
-step: 15
-consecutive_fails: 3, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 28
-step: 15
-consecutive_fails: 4, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 35
-step: 15
-consecutive_fails: 5, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 42
-step: 15
-consecutive_fails: 6, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 12 skipped_cells: 3
-step: 6
-consecutive_fails: 1, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 6
-step: 6
-consecutive_fails: 2, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 9
-step: 6
-consecutive_fails: 3, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 12 skipped_cells: 12
-step: 6
-consecutive_fails: 4, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 95 skipped_cells: 7
-step: 15
-consecutive_fails: 1, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 14
-step: 15
-consecutive_fails: 2, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 21
-step: 15
-consecutive_fails: 3, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 28
-step: 15
-consecutive_fails: 4, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 35
-step: 15
-consecutive_fails: 5, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 95 skipped_cells: 42
-step: 15
-consecutive_fails: 6, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 12 skipped_cells: 1
-step: 3
-consecutive_fails: 1, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 0
-step: 3
-consecutive_fails: 0, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 1
-step: 3
-consecutive_fails: 1, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 2
-step: 3
-consecutive_fails: 2, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 3
-step: 3
-consecutive_fails: 3, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 4
-step: 3
-consecutive_fails: 4, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 5
-step: 3
-consecutive_fails: 5, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 6
-step: 3
-consecutive_fails: 6, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 7
-step: 3
-consecutive_fails: 7, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 8
-step: 3
-consecutive_fails: 8, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 9 skipped_cells: 9
-step: 3
-consecutive_fails: 9, max_consecutive_fails: 15
-------------------------------------------------
-num_cells: 98 skipped_cells: 7
-step: 15
-consecutive_fails: 1, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 98 skipped_cells: 14
-step: 15
-consecutive_fails: 2, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 98 skipped_cells: 21
-step: 15
-consecutive_fails: 3, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 98 skipped_cells: 28
-step: 15
-consecutive_fails: 4, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 98 skipped_cells: 35
-step: 15
-consecutive_fails: 5, max_consecutive_fails: 7
-------------------------------------------------
-num_cells: 98 skipped_cells: 42
-step: 15
-consecutive_fails: 6, max_consecutive_fails: 7
-------------------------------------------------
 1
 set end_time [clock milliseconds]
-1718236642694
+1718237862452
 # Force full timing update
 update_timing -full
 1
@@ -326,12 +146,12 @@ foreach cell_footprint $original_cells {
 puts "(OK) All the cells mantained the same footprint."
 (OK) All the cells mantained the same footprint.
 set run_time [expr ($end_time - $start_time) / 1000.0]
-22.207
+21.896
 if {$run_time > 180.0} {
     error "Maximum Optimization Run Time exceeded: ${run_time}s."
 } 
 puts "(OK) Optimization Run Time: ${run_time}s."
-(OK) Optimization Run Time: 22.207s.
+(OK) Optimization Run Time: 21.896s.
 # Reporting
 report_threshold_voltage_group
 ------------------------------------------------------------------------------------------------------------------------
@@ -398,7 +218,7 @@ Total 9 types of messages are suppressed
 
 Timing updates: 72 (7 implicit, 65 explicit) (7 incremental, 65 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 1170.56 MB
+Maximum memory usage for this session: 1170.39 MB
 CPU usage for this session: 45 seconds 
 Elapsed time for this session: 29 seconds
 Diagnostics summary: 2 warnings, 5 informationals

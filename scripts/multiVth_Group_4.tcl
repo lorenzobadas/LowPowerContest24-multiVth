@@ -5,18 +5,7 @@ proc create_priority_list {vt} {
         set this_cell_list [list $cell]
         set this_wrst_path [get_timing_paths -through $cell]
         set this_slack [get_attribute $this_wrst_path slack]
-        # set pins [get_pins -of_object $cell -filter "direction == out"]
-        # set fanout 0
-        # foreach_in_collection pin $pins {
-        #     puts $pins
-        #     set fanout [get_attribute $pin max_fanout]
-        # }
-        
-        # set heuristic [expr {$this_slack / $fanout}]
-        
-        # puts "cell: $cell slack: $this_slack fanout: $fanout heuristic: $heuristic"
-        set heuristic $this_slack
-        lappend this_cell_list $heuristic
+        lappend this_cell_list $this_slack
         lappend priority_list $this_cell_list
 
     }
@@ -33,8 +22,6 @@ proc swap_vt {cell original_vt new_vt} {
 }
 
 proc binary_swap {original_vt new_vt} {
-    # case 1 swap L to H then L to S
-    # case 2 swap L to S then S to H
     # if the number of swaps in the current cycle is 0, return
     set priority_list [create_priority_list $original_vt]
     set percentage 0.5
@@ -83,9 +70,7 @@ proc binary_swap {original_vt new_vt} {
 
 proc linear_swap {step original_vt new_vt max_consecutive_fails} {
     set priority_list [create_priority_list $original_vt]
-    set vt_cells [get_cells -quiet -filter "lib_cell.threshold_voltage_group == ${original_vt}VT"]
-    set num_cells [sizeof_collection $vt_cells]
-    set index 0
+    set num_cells [llength $priority_list]
     set consecutive_fails 0
     set skipped_cells 0
     while {$skipped_cells < $num_cells} {
@@ -125,11 +110,11 @@ proc linear_swap {step original_vt new_vt max_consecutive_fails} {
             # set skipped_cells [expr {$skipped_cells + $step}]
             set skipped_cells [expr {$skipped_cells + int($step * 0.5)}]
         }
-        # print debug info
-        puts "num_cells: $num_cells skipped_cells: $skipped_cells"
-        puts "step: $step"
-        puts "consecutive_fails: $consecutive_fails, max_consecutive_fails: $max_consecutive_fails"
-        puts "------------------------------------------------"
+        # # print debug info
+        # puts "num_cells: $num_cells skipped_cells: $skipped_cells"
+        # puts "step: $step"
+        # puts "consecutive_fails: $consecutive_fails, max_consecutive_fails: $max_consecutive_fails"
+        # puts "------------------------------------------------"
     }
 }
 
@@ -153,13 +138,13 @@ proc multiVth {} {
 
     if {$case1} {
         set original_vt1 L
-        set original_vt2 L
         set new_vt1 H
+        set original_vt2 L
         set new_vt2 S
     } else {
         set original_vt1 L
-        set original_vt2 S
         set new_vt1 S
+        set original_vt2 S
         set new_vt2 H
     }
     binary_swap $original_vt1 $new_vt1
@@ -168,22 +153,8 @@ proc multiVth {} {
     set num_cells [sizeof_collection $cells]
     set steps [lrange [logarithmic_decrease $num_cells 9 3] 5 8]
     foreach step $steps {
-        # set max_consecutive_fails [expr {int($step * (2.0/3.0))}]
-        # if {$max_consecutive_fails < 2} {
-        #     set max_consecutive_fails 2
-        # }
-
-        # ### BEST RESULT WITH 10 AND 9
-        # ### BEST RESULT WITH 12 AND 7 (300 ms too late tho)
-        # ### BEST RESULT WITH 15 AND 5 (20 s too late tho)
-        # ### BEST RESULT WITH 15 AND NO S to H (167 seconds)
-        set max_consecutive_fails 15
-        linear_swap $step $original_vt1 $new_vt1 $max_consecutive_fails
-        # set max_consecutive_fails 5
-        # linear_swap $step $original_vt2 $new_vt2 $max_consecutive_fails
+        linear_swap $step $original_vt1 $new_vt1 15
         linear_swap 15 $original_vt2 $new_vt2 7
     }
     return 1
 }
-
-# binary_swap L H
