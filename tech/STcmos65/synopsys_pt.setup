@@ -1,7 +1,0 @@
-set technology "STcmos65"
-set search_path ""
-lappend search_path "./tech/${technology}"
-
-lappend link_library "CORE65LPLVT_nom_1.20V_25C.db"
-lappend link_library "CORE65LPSVT_nom_1.20V_25C.db"
-lappend link_library "CORE65LPHVT_nom_1.20V_25C.db"
