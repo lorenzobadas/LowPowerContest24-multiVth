@@ -2,7 +2,7 @@
 
 ## Description
 `multiVth` is a TCL procedure designed to optimize the threshold voltage (VT) of cells in a combinational circuit to minimize post-synthesis leakage power.
-Three constraint have to be met:
+Three constraints have to be met:
 1. The worst slack must be positive.
 2. Logic gates must keep the same cell footprint.
 3. The runtime must be lower than three minutes.
@@ -43,13 +43,13 @@ In phase 1, the binary search algorithm performs swaps from low threshold voltag
 
 In phase 2, the linear windowed algorithm is used four times with logarithmically decreasing steps for swaps from L-Vt to S-Vt, and four times with a fixed step for swaps from S-Vt to H-Vt.
 
-Phase 3 executes only if the execution time constraint is respected, performing swaps with steps of two and one, both from L-Vt to S-Vt and S-Vt to H-Vt.
+Phase 3 is executed only if the execution time constraint is met, performing swaps with steps of two and one, both from L-Vt to S-Vt and S-Vt to H-Vt.
 
 ## Evaluation
 The command was tested on two benchmark circuits, `c1908` and `c5315`.
-For both these circuits, the reference leakage power was measured after synthesizing the design with only L-Vt cells, with a clock period of 2 ns, 1.5 ns, and 1 ns.
-The leakage power was then measured after running the `multiVth` command on the design, with the same clock periods.
-The following thresholds where provided in order to evaluate the command.
+For both circuits, the reference leakage power was measured after synthesizing the design using only L-Vt cells, with clock periods of 2 ns, 1.5 ns, and 1 ns.
+Leakage power was then measured after running the `multiVth` command on the design, using the same clock periods.
+The following thresholds were provided in order to evaluate the command.
 
 | Benchmark | Clock Period (ns) | Leakage Power Savings |
 |-----------|-------------------|-----------------------|
@@ -79,8 +79,8 @@ The following thresholds where provided in order to evaluate the command.
 | c5315     | 1.0               | 25.32%                |
 
 The table above shows the obtained results.
-The command was able to meet the requirements for all the test cases, obtaining full marks.
+The command met all the test case requirements, obtaining full marks.
 
 > **_NOTE:_** 
-For confidentiality reasons, the scripts used to run the command are not provided in this repository.
+Due to confidentiality reasons, the scripts used to run the command are not provided in this repository.
 The result files were obtained by running the developed Makefile.
